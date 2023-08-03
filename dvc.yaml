@@ -1,0 +1,13 @@
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - data/raw/survey.csv
+    metrics:
+      - reports/MSE.txt:
+          cache: false
+      - reports/MAE.txt:
+          cache: false
+      - reports/R2.txt:
+          cache: false
